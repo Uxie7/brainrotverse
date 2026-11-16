@@ -43,11 +43,14 @@ export const BrainrotRadio: React.FC = () => {
     const audio = audioRef.current;
     if (!audio) return;
     setErrorMsg(null);
+    setIsLoading(true);
     try {
       await audio.play();
       setIsPlaying(true);
+      setIsLoading(false);
     } catch {
       setIsPlaying(false);
+      setIsLoading(false);
       setErrorMsg('Tap Play again to enable audio.');
     }
   };
@@ -58,6 +61,7 @@ export const BrainrotRadio: React.FC = () => {
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
+      setIsLoading(false);
     } else {
       void startPlayback();
     }
@@ -65,28 +69,34 @@ export const BrainrotRadio: React.FC = () => {
 
   const selectTrack = (nextIdx: number, autoPlay = true) => {
     const bounded = (nextIdx + BRAINROT_TRACKS.length) % BRAINROT_TRACKS.length;
+    const nextTrack = BRAINROT_TRACKS[bounded];
     setTrackIndex(bounded);
     setCurrentTime(0);
     setDuration(0);
     setErrorMsg(null);
+
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.src = nextTrack.url;
+    audio.load();
+
     if (autoPlay) {
       setIsLoading(true);
-      setIsPlaying(true);
-      window.setTimeout(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
-        audio.load();
-        audio
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-            setIsLoading(false);
-          })
-          .catch(() => {
-            setIsPlaying(false);
-            setIsLoading(false);
-          });
-      }, 20);
+      audio
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsLoading(false);
+        })
+        .catch(() => {
+          setIsPlaying(false);
+          setIsLoading(false);
+          setErrorMsg('Tap Play to start this track.');
+        });
+    } else {
+      setIsPlaying(false);
+      setIsLoading(false);
     }
   };
 
@@ -105,19 +115,21 @@ export const BrainrotRadio: React.FC = () => {
         ref={audioRef}
         src={track.url}
         crossOrigin="anonymous"
-        preload="none"
+        preload="metadata"
         onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
         onLoadedMetadata={(e) => {
           setDuration(e.currentTarget.duration || 0);
           setIsLoading(false);
         }}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         onWaiting={() => setIsLoading(true)}
         onCanPlay={() => setIsLoading(false)}
         onEnded={() => selectTrack(trackIndex + 1, true)}
         onError={() => {
           setIsLoading(false);
           setIsPlaying(false);
-          setErrorMsg('Stream unavailable — skipping or retry.');
+          setErrorMsg('Stream hiccup — tap Next or Play to retry.');
         }}
       />
 

@@ -84,15 +84,16 @@ This project builds as a static Vite SPA (`dist/`):
     ├── types.ts                # Shared TypeScript interfaces
     ├── data/brainrotData.ts    # Feed posts, quiz questions, templates & anchors
     └── components/
-        ├── Navbar.tsx          # Responsive nav bar & mobile drawer
-        ├── Footer.tsx          # Site footer
-        ├── HomePage.tsx        # Hero, ticker, feature cards & spotlight
-        ├── FeedPage.tsx        # Searchable meme grid & comments modal
         ├── AuraCheckPage.tsx   # 5-step Aura quiz & diagnosis
+        ├── BrainrotRadio.tsx   # Persistent floating Brainrot FM audio player
+        ├── ChallengePage.tsx   # Timed 10-question arcade trivia
         ├── CreatureLabPage.tsx # Interactive sticker lab & PNG exporter
         ├── CreatureRender.tsx  # Draggable accessory layer renderer & canvas baker
+        ├── FeedPage.tsx        # Searchable meme grid & comments modal
+        ├── Footer.tsx          # Site footer
+        ├── HomePage.tsx        # Hero, ticker, feature cards & spotlight
         ├── MemeFactoryPage.tsx # HTML5 Canvas meme generator
-        ├── ChallengePage.tsx   # Timed 10-question arcade trivia
+        ├── Navbar.tsx          # Responsive nav bar & mobile drawer
         └── ProfilePage.tsx     # Stats, achievements & creature collection
 ```
 
@@ -101,3 +102,7 @@ This project builds as a static Vite SPA (`dist/`):
 ## License
 
 Built for fun. Stay cooked.
+
+# Hackathon
+
+Submission for Celestial Biscuits Nebulith Event 2026 star 💫
