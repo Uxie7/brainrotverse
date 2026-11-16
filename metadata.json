@@ -1,0 +1,6 @@
+{
+  "name": "BRAINROTVERSE™",
+  "description": "A digital playground for people whose algorithms have given up on them. Explore the feed, check your aura, mutate creatures in the lab, make memes, and survive the Brainrot Challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

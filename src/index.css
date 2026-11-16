@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --br-yellow: #ffe24a;
+    --br-pink: #ff2e88;
+    --br-cream: #fff9ec;
+    --br-purple: #9d4edd;
+    --br-deep-blue: #15144a;
+    --br-ink: #111111;
+  }
+
+  body {
+    background-color: var(--br-cream);
+    color: var(--br-ink);
+    font-family: "Fredoka", "Plus Jakarta Sans", system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-graffiti {
+  font-family: "Bangers", cursive;
+  letter-spacing: 0.03em;
+}
+
+.font-marker {
+  font-family: "Permanent Marker", cursive;
+}
+
+.font-display {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-comic {
+  font-family: "Fredoka", sans-serif;
+}
+
+.font-body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Neo-brutalist border & hard offset shadows */
+.brutal-border {
+  border: 3px solid #111111;
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2.5px 2.5px 0px #111111;
+}
+
+.brutal-btn {
+  border: 3px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+/* Halftone dot overlays */
+.halftone-dots {
+  background-image: radial-gradient(rgba(17, 17, 17, 0.14) 2px, transparent 2px);
+  background-size: 12px 12px;
+}
+
+.halftone-dots-white {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 2px, transparent 2px);
+  background-size: 14px 14px;
+}
+
+.halftone-dots-pink {
+  background-image: radial-gradient(rgba(255, 46, 136, 0.22) 2.5px, transparent 2.5px);
+  background-size: 13px 13px;
+}
+
+/* Checkerboard Y2K accents */
+.checkerboard-sm {
+  background-color: #ffffff;
+  background-image: linear-gradient(45deg, #111111 25%, transparent 25%),
+    linear-gradient(-45deg, #111111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111111 75%),
+    linear-gradient(-45deg, transparent 75%, #111111 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+.checkerboard-md {
+  background-color: #fff9ec;
+  background-image: linear-gradient(45deg, #111111 25%, transparent 25%),
+    linear-gradient(-45deg, #111111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111111 75%),
+    linear-gradient(-45deg, transparent 75%, #111111 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+/* Comic burst radial background */
+.sunburst-yellow {
+  background: radial-gradient(circle at 50% 45%, #fff3a1 0%, #ffe24a 45%, #ffd028 100%);
+}
+
+.sunburst-pink {
+  background: radial-gradient(circle at 40% 50%, #ff63a8 0%, #ff2e88 55%, #e61670 100%);
+}
+
+/* Text outlines for graffiti titles */
+.text-stroke-black {
+  -webkit-text-stroke: 2.5px #111111;
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0px #111111;
+}
+
+.text-stroke-black-sm {
+  -webkit-text-stroke: 1.5px #111111;
+  paint-order: stroke fill;
+  text-shadow: 2.5px 2.5px 0px #111111;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 3px #ffffff;
+  paint-order: stroke fill;
+}
+
+/* Torn paper jagged edge helpers */
+.torn-edge-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 93%,
+    97% 97%, 94% 92%, 91% 98%, 87% 93%, 84% 99%, 80% 94%, 76% 98%, 72% 93%,
+    68% 99%, 64% 94%, 60% 98%, 55% 93%, 51% 99%, 47% 93%, 43% 98%, 38% 92%,
+    34% 99%, 30% 94%, 25% 98%, 21% 93%, 17% 99%, 13% 93%, 9% 98%, 5% 94%, 2% 98%, 0% 94%
+  );
+}
+
+.torn-paper-card {
+  position: relative;
+  border: 3px solid #111111;
+  box-shadow: 5px 5px 0px #111111;
+}
+
+/* Custom scrollbar for ticker */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
