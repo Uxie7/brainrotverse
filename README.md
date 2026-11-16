@@ -14,6 +14,7 @@
 - **Meme Factory**: Live HTML5 `<canvas>` meme generator with mascot templates, auto-scaling Impact-style top/bottom captions, background burst swatches, and one-click PNG download.
 - **Aura Check**: 5-question interactive personality quiz with progress tracking and an Aura diagnosis saved directly to your Profile.
 - **Brainrot Challenge**: 10-question arcade trivia mode with a live 15-second countdown timer per question, streak bonuses, and high-score persistence.
+- **Brainrot FM**: Persistent floating mini-radio streaming classic CC-BY internet meme tracks (*Monkeys Spinning Monkeys*, *Fluffing a Duck*, *Sneaky Snitch*, *Scheming Weasel*, *Too Cool*, *Electrodoodle*) across all pages.
 - **Your Profile**: `localStorage`-backed stats (`Likes`, `Creatures`, `Quizzes`, `Best Score`), editable username, mascot avatar switcher, unlockable achievements, and Saved Creatures collection.
 
 ---
@@ -100,7 +101,3 @@ This project builds as a static Vite SPA (`dist/`):
 ## License
 
 Built for fun. Stay cooked.
-
-# Hackathon
-
-Submission for Celestial Biscuits Nebulith Event 2026 star 💫

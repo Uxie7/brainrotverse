@@ -5,6 +5,7 @@
 
 import { useEffect, useState } from 'react';
 import { AuraCheckPage } from './components/AuraCheckPage';
+import { BrainrotRadio } from './components/BrainrotRadio';
 import { ChallengePage } from './components/ChallengePage';
 import { CreatureLabPage } from './components/CreatureLabPage';
 import { FeedPage } from './components/FeedPage';
@@ -279,6 +280,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={navigate} />
+      <BrainrotRadio />
     </div>
   );
 }

@@ -9,7 +9,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-[#fff9ec] border-t-[3px] border-[#111111] relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 py-5 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 pt-5 pb-16 sm:py-5 flex flex-col lg:flex-row items-center justify-between gap-4">
         {/* Brand */}
         <button
           type="button"

@@ -126,3 +126,12 @@ export interface UserProfile {
   lastAuraDiagnosis: AuraDiagnosis | null;
   achievements: string[];
 }
+
+export interface BrainrotTrack {
+  id: string;
+  title: string;
+  artist: string;
+  vibe: string;
+  url: string;
+  accentColor: string;
+}
