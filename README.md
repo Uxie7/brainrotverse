@@ -100,3 +100,7 @@ This project builds as a static Vite SPA (`dist/`):
 ## License
 
 Built for fun. Stay cooked.
+
+# Hackathon
+
+Submission for Celestial Biscuits Nebulith Event 2026 star 💫
