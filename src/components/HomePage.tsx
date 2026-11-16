@@ -85,9 +85,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
         />
 
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 pt-6 pb-8 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-4">
-            {/* Center Typography & CTAs — First on mobile/tablet so headline + CTAs sit above the fold */}
-            <div className="order-1 lg:order-2 lg:col-span-4 text-center z-20 flex flex-col items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 sm:gap-8 lg:gap-4">
+            {/* 1. Left Hero Mascots — First on small/medium screens & left column on desktop */}
+            <div className="lg:col-span-4 relative flex items-end justify-center pt-9 sm:pt-10 lg:pt-8 min-h-[210px] sm:min-h-[270px] lg:min-h-[340px]">
+              {/* NO THOUGHTS sticker */}
+              <div className="absolute top-1 left-2 sm:left-12 lg:left-3 z-30 -rotate-12 bg-[#fff9ec] px-2.5 sm:px-3 py-1 sm:py-1.5 brutal-border brutal-shadow-sm">
+                <span className="font-marker text-xs sm:text-sm md:text-base text-[#111111] tracking-wide">
+                  NO THOUGHTS.
+                </span>
+              </div>
+              <Star className="hidden sm:block absolute top-6 left-2/3 w-6 h-6 text-[#111111] fill-[#fff9ec] rotate-12 z-10" />
+
+              <div className="relative inline-flex items-end justify-center">
+                <img
+                  src="/assets/mascots/shark_quartet.png"
+                  alt="Tralalero Tralala Shark in blue sneakers"
+                  className="relative z-10 w-44 sm:w-60 lg:w-80 object-contain drop-shadow-[0_14px_16px_rgba(17,17,17,0.28)] hover:scale-105 transition-transform"
+                  referrerPolicy="no-referrer"
+                />
+                <img
+                  src="/assets/mascots/cat_shades.png"
+                  alt="Tabby cat in pixel shades"
+                  className="relative z-20 -ml-6 sm:-ml-8 lg:-ml-10 mb-1 w-20 sm:w-28 lg:w-36 object-contain drop-shadow-[0_8px_10px_rgba(17,17,17,0.28)] rotate-3 shrink-0"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* 2. Center Typography & CTAs — Second on small/medium screens & center column on desktop */}
+            <div className="lg:col-span-4 text-center z-20 flex flex-col items-center">
               <div className="relative inline-block mb-1">
                 <Crown className="hidden sm:block absolute -top-6 -left-8 w-8 h-8 text-[#111111] fill-[#ffe24a] -rotate-12" />
                 <Crown className="hidden sm:block absolute -top-5 -right-8 w-8 h-8 text-[#ff2e88] fill-[#ff2e88]/20 rotate-12" />
@@ -96,10 +122,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
                 </p>
               </div>
 
-              <h1 className="font-graffiti text-[clamp(3.35rem,13vw,5.25rem)] leading-[0.88] text-[#ff2e88] text-stroke-black -rotate-2 select-none">
+              <h1 className="font-graffiti text-[clamp(3.2rem,13vw,5.25rem)] leading-[0.88] text-[#ff2e88] text-stroke-black -rotate-2 select-none">
                 BRAINROT
                 <span
-                  className="block font-display text-[clamp(2.75rem,10vw,4.5rem)] text-[#111111] tracking-wider mt-1"
+                  className="block font-display text-[clamp(2.65rem,10vw,4.5rem)] text-[#111111] tracking-wider mt-1"
                   style={{ WebkitTextStroke: '0px', textShadow: '4px 4px 0px #fff9ec' }}
                 >
                   VERSE.
@@ -129,34 +155,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
               </div>
             </div>
 
-            {/* Left Hero Mascots */}
-            <div className="order-2 lg:order-1 lg:col-span-4 relative flex items-end justify-center min-h-[190px] sm:min-h-[260px] lg:min-h-[340px]">
-              {/* NO THOUGHTS sticker */}
-              <div className="absolute top-0 left-1 sm:left-6 z-20 -rotate-12 bg-[#fff9ec] px-2.5 sm:px-3 py-1 sm:py-1.5 brutal-border brutal-shadow-sm">
-                <span className="font-marker text-xs sm:text-sm md:text-base text-[#111111] tracking-wide">
-                  NO THOUGHTS.
-                </span>
-              </div>
-              <Star className="hidden sm:block absolute top-8 left-1/2 w-6 h-6 text-[#111111] fill-[#fff9ec] rotate-12 z-10" />
-
-              <img
-                src="/assets/mascots/shark_quartet.png"
-                alt="Tralalero Tralala Shark in blue sneakers"
-                className="relative z-10 w-44 sm:w-64 lg:w-80 object-contain drop-shadow-[0_14px_16px_rgba(17,17,17,0.28)] hover:scale-105 transition-transform"
-                referrerPolicy="no-referrer"
-              />
-              <img
-                src="/assets/mascots/cat_shades.png"
-                alt="Tabby cat in pixel shades"
-                className="absolute -bottom-1 right-4 sm:right-8 lg:right-2 z-20 w-20 sm:w-28 lg:w-36 object-contain drop-shadow-[0_8px_10px_rgba(17,17,17,0.28)] rotate-3"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-
-            {/* Right Hero Mascots + Stickers */}
-            <div className="order-3 lg:order-3 lg:col-span-4 relative flex items-end justify-center min-h-[190px] sm:min-h-[260px] lg:min-h-[340px]">
+            {/* 3. Right Hero Mascots + Stickers — Third on small/medium screens & right column on desktop */}
+            <div className="lg:col-span-4 relative flex items-end justify-center pt-10 sm:pt-12 lg:pt-10 min-h-[210px] sm:min-h-[270px] lg:min-h-[340px]">
               {/* 100% COOKED sticker */}
-              <div className="absolute top-0 right-2 sm:right-20 z-20 rotate-6 bg-[#ff2e88] text-white px-2.5 sm:px-3 py-1 sm:py-1.5 brutal-border brutal-shadow-sm">
+              <div className="absolute top-1 left-2 sm:left-14 lg:left-2 z-30 -rotate-6 lg:rotate-6 bg-[#ff2e88] text-white px-2.5 sm:px-3 py-1 sm:py-1.5 brutal-border brutal-shadow-sm">
                 <span className="font-marker text-xs md:text-sm tracking-wide">
                   100% COOKED.
                 </span>
@@ -166,11 +168,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
               <img
                 src="/assets/mascots/cat_banana.png"
                 alt="Banana costume cat"
-                className="hidden sm:block absolute -top-4 right-0 z-20 w-24 md:w-28 object-contain rotate-12 drop-shadow-[0_8px_10px_rgba(17,17,17,0.25)]"
+                className="absolute top-0 right-2 sm:right-14 lg:right-0 z-20 w-16 sm:w-24 lg:w-28 object-contain rotate-12 drop-shadow-[0_8px_10px_rgba(17,17,17,0.25)]"
                 referrerPolicy="no-referrer"
               />
 
-              <div className="relative flex items-end justify-center">
+              <div className="relative flex items-end justify-center pt-2">
                 <img
                   src="/assets/mascots/duck_chain.png"
                   alt="Duck in sunglasses and gold chain"
@@ -192,8 +194,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
               </div>
 
               {/* DO NOT FEED AFTER MIDNIGHT sticker */}
-              <div className="hidden sm:block absolute bottom-2 right-0 z-30 -rotate-3 bg-[#fff9ec] px-3 py-2 brutal-border brutal-shadow-sm max-w-[140px] text-center">
-                <span className="font-marker text-xs leading-tight text-[#111111] block">
+              <div className="absolute bottom-0 right-1 sm:right-8 lg:right-0 z-30 -rotate-3 bg-[#fff9ec] px-2.5 sm:px-3 py-1.5 sm:py-2 brutal-border brutal-shadow-sm max-w-[115px] sm:max-w-[140px] text-center">
+                <span className="font-marker text-[10px] sm:text-xs leading-tight text-[#111111] block">
                   DO NOT FEED AFTER MIDNIGHT.
                 </span>
               </div>
@@ -315,11 +317,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
                       isLast ? 'sm:col-span-2 lg:col-span-1' : ''
                     } torn-paper-card rounded-xl p-4 sm:p-3.5 flex ${
                       isLast
-                        ? 'flex-row sm:items-center lg:flex-col lg:items-stretch'
+                        ? 'flex-col sm:flex-row sm:items-center lg:flex-col lg:items-stretch'
                         : 'flex-col'
                     } justify-between gap-3 cursor-pointer transition-transform duration-150`}
                   >
-                    <div className={isLast ? 'flex-1 lg:flex-none' : ''}>
+                    <div className={isLast ? 'sm:flex-1 lg:flex-none' : ''}>
                       <h3 className="font-graffiti text-2xl leading-none text-[#111111] tracking-wide">
                         {card.title}
                       </h3>
@@ -336,7 +338,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenLabWithBas
 
                     <div
                       className={`flex items-center justify-center ${
-                        isLast ? 'h-24 sm:h-28 lg:my-2' : 'my-2 h-24 sm:h-28'
+                        isLast ? 'my-2 sm:my-0 lg:my-2 h-24 sm:h-28' : 'my-2 h-24 sm:h-28'
                       }`}
                     >
                       <img
